@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bonditsugnosis.com.ng/sitemap.xml
