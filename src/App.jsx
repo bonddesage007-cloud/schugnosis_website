@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight, BadgeCheck, BookOpen, ChevronLeft, ChevronRight, CreditCard,
@@ -57,6 +57,8 @@ const faqs = [
 
 function App() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
   const currentSlide = showcaseSlides[activeSlide];
 
   function nextSlide() {
@@ -65,6 +67,30 @@ function App() {
 
   function previousSlide() {
     setActiveSlide((current) => (current - 1 + showcaseSlides.length) % showcaseSlides.length);
+  }
+
+  function handleTouchStart(e) {
+    touchStartX.current = e.touches[0].clientX;
+  }
+
+  function handleTouchMove(e) {
+    touchEndX.current = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd() {
+    const distance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+      nextSlide();
+    }
+
+    if (distance < -minSwipeDistance) {
+      previousSlide();
+    }
+
+    touchStartX.current = 0;
+    touchEndX.current = 0;
   }
 
   return (
@@ -201,6 +227,9 @@ function App() {
             initial={{ opacity: 0, x: 32 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.35 }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             <div className="browser-frame slider-frame">
               <div className="browser-dots"><span></span><span></span><span></span></div>
