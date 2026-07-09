@@ -1,21 +1,8 @@
-import { useState, useRef } from "react";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
-  BadgeCheck,
-  BookOpen,
-  ChevronLeft,
-  ChevronRight,
-  Database,
-  FileText,
-  GraduationCap,
   HelpCircle,
-  IdCard,
-  Landmark,
   MessageCircle,
   ReceiptText,
-  ShieldCheck,
-  Wrench,
 } from "lucide-react";
 import "./App.css";
 import Navbar from "./components/layout/Navbar";
@@ -23,6 +10,9 @@ import Hero from "./components/sections/Hero";
 import LogoStrip from "./components/sections/LogoStrip";
 import Features from "./components/sections/Features";
 import Finance from "./components/sections/Finance";
+import Showcase from "./components/sections/Showcase";
+import Installation from "./components/sections/Installation";
+import Offline from "./components/sections/Offline";
 
 const phoneNumber = "2349126259753";
 const whatsappMessage = encodeURIComponent(
@@ -30,16 +20,6 @@ const whatsappMessage = encodeURIComponent(
 );
 const whatsappLink = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
 
-const showcaseSlides = [
-  { title: "Login Page", image: "/images/screenshots/auth/login-page.png", text: "Premium branded entry into the school system." },
-  { title: "First-Time Setup", image: "/images/screenshots/auth/first-time-setup.png", text: "Register school name, logo, theme and license." },
-  { title: "Dashboard", image: "/images/screenshots/dashboard/dashboard-main.png", text: "A beautiful command center for school administration." },
-  { title: "Finance", image: "/images/screenshots/finance/finance-main.png", text: "Track payments, debtors, cashbook, receipts and statements." },
-  { title: "Student Records", image: "/images/screenshots/students/students-list.png", text: "Clean student management with organized search." },
-  { title: "Report Cards", image: "/images/screenshots/reports/report-card.png", text: "Printable academic report card with school identity." },
-  { title: "ID Cards", image: "/images/screenshots/id-cards/id-card-front-back.png", text: "Stylish front/back student ID card generation." },
-  { title: "Backup Settings", image: "/images/screenshots/settings/settings-backup.png", text: "Backup and restore school records confidently." },
-];
 
 const screenshots = {
   dashboard: "/images/screenshots/dashboard/dashboard-main.png",
@@ -62,46 +42,11 @@ const faqs = [
 ];
 
 function App() {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
-  const currentSlide = showcaseSlides[activeSlide];
-
-  function nextSlide() {
-    setActiveSlide((current) => (current + 1) % showcaseSlides.length);
-  }
-
-  function previousSlide() {
-    setActiveSlide((current) => (current - 1 + showcaseSlides.length) % showcaseSlides.length);
-  }
-
-  function handleTouchStart(e) {
-    touchStartX.current = e.touches[0].clientX;
-  }
-
-  function handleTouchMove(e) {
-    touchEndX.current = e.touches[0].clientX;
-  }
-
-  function handleTouchEnd() {
-    const distance = touchStartX.current - touchEndX.current;
-    const minSwipeDistance = 50;
-
-    if (distance > minSwipeDistance) {
-      nextSlide();
-    }
-
-    if (distance < -minSwipeDistance) {
-      previousSlide();
-    }
-
-    touchStartX.current = 0;
-    touchEndX.current = 0;
-  }
-
+  
   return (
     <main>
       <Navbar whatsappLink={whatsappLink} />
+      
       <Hero
         whatsappLink={whatsappLink}
         screenshots={screenshots}
@@ -113,84 +58,11 @@ function App() {
 
       <Finance screenshots={screenshots} />
 
-      <section id="showcase" className="section showcase-section">
-        <div className="section-heading showcase-heading">
-          <span>Product Showcase</span>
-          <h2>Explore Schugnosis in motion.</h2>
-          <p>Swipe on mobile or use the desktop arrows to preview the major screens schools will interact with.</p>
-        </div>
+      <Showcase />
 
-        <div className="screenshot-slider">
-          <button className="slider-arrow slider-arrow-left" onClick={previousSlide} aria-label="Previous screenshot">
-            <ChevronLeft size={28} />
-          </button>
+      <Installation />
 
-          <motion.div
-            key={currentSlide.title}
-            className="slider-stage"
-            initial={{ opacity: 0, x: 32 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.35 }}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <div className="browser-frame slider-frame">
-              <div className="browser-dots"><span></span><span></span><span></span></div>
-              <img src={currentSlide.image} alt={currentSlide.title} />
-            </div>
-
-            <div className="slider-caption">
-              <span>{String(activeSlide + 1).padStart(2, "0")} / {String(showcaseSlides.length).padStart(2, "0")}</span>
-              <h3>{currentSlide.title}</h3>
-              <p>{currentSlide.text}</p>
-            </div>
-          </motion.div>
-
-          <button className="slider-arrow slider-arrow-right" onClick={nextSlide} aria-label="Next screenshot">
-            <ChevronRight size={28} />
-          </button>
-        </div>
-
-        <div className="slider-dots">
-          {showcaseSlides.map((slide, index) => (
-            <button
-              key={slide.title}
-              className={index === activeSlide ? "active-dot" : ""}
-              onClick={() => setActiveSlide(index)}
-              aria-label={`Open ${slide.title}`}
-            ></button>
-          ))}
-        </div>
-      </section>
-
-      <section className="installation-section">
-        <div className="section-heading">
-          <span>How Installation Works</span>
-          <h2>Simple setup. Clear training. Immediate school use.</h2>
-        </div>
-
-        <div className="install-steps">
-          <Step number="01" title="School Demo" text="We show the proprietor or administrator how Schugnosis works using real school scenarios." />
-          <Step number="02" title="Installation" text="The software is installed on the selected school computer and configured for the school." />
-          <Step number="03" title="Brand Setup" text="School name, logo, theme color, license and first admin account are created." />
-          <Step number="04" title="Staff Training" text="Admin/accountant learns student records, finance, reports, ID cards and backup." />
-        </div>
-      </section>
-
-      <section className="offline-section">
-        <div>
-          <span>Why Schools Trust It</span>
-          <h2>Built for real Nigerian school conditions.</h2>
-          <p>Schugnosis Lite runs on a single school computer, stores records locally and continues working even when internet is unavailable.</p>
-        </div>
-
-        <div className="offline-grid">
-          <div><Database /><strong>SQLite Local Database</strong><p>Records stay on the school computer.</p></div>
-          <div><ShieldCheck /><strong>Backup Protection</strong><p>Export data to flash drive or external storage.</p></div>
-          <div><BookOpen /><strong>Easy Staff Adoption</strong><p>Simple screens for admin, accountant and records officers.</p></div>
-        </div>
-      </section>
+      <Offline />
 
       <section id="pricing" className="pricing-section">
         <div className="section-heading">
@@ -249,15 +121,5 @@ function App() {
   );
 }
 
-function Step({ number, title, text }) {
-  return (
-    <div className="step-card">
-      <span>{number}</span>
-      <Wrench size={22} />
-      <h3>{title}</h3>
-      <p>{text}</p>
-    </div>
-  );
-}
 
 export default App;
