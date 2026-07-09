@@ -17,11 +17,12 @@ import {
   ShieldCheck,
   Wrench,
 } from "lucide-react";
-
 import "./App.css";
-
 import Navbar from "./components/layout/Navbar";
 import Hero from "./components/sections/Hero";
+import LogoStrip from "./components/sections/LogoStrip";
+import Features from "./components/sections/Features";
+import Finance from "./components/sections/Finance";
 
 const phoneNumber = "2349126259753";
 const whatsappMessage = encodeURIComponent(
@@ -45,16 +46,6 @@ const screenshots = {
   finance: "/images/screenshots/finance/finance-main.png",
 };
 
-const features = [
-  { icon: GraduationCap, title: "Student Records", text: "Register, search and manage student data with passport upload and organized class records." },
-  { icon: Landmark, title: "Finance & Cashbook", text: "Track fees, income, expenses, daily balances, receipts, debtors and statements." },
-  { icon: FileText, title: "Report Cards", text: "Generate beautiful printable report cards with school branding and student passport." },
-  { icon: IdCard, title: "Student ID Cards", text: "Create stylish ID cards with school logo, student details, expiry date and back-note." },
-  { icon: Database, title: "Offline SQLite System", text: "Works on a single PC without internet, with local database storage and smooth backup." },
-  { icon: ShieldCheck, title: "Backup & Restore", text: "Protect school data with local backup and import tools for safer administration." },
-];
-
-const financeCards = ["Fee Structure", "Debtors List", "Receipts", "Cashbook", "Student Statement", "Audit Trail"];
 
 const pricingPlans = [
   { name: "Starter Installation", price: "For small schools", text: "Best for schools that want student records, report cards, finance and basic backup.", items: ["Single-PC setup", "Student records", "Fees and receipts", "Report cards", "Basic training"] },
@@ -116,63 +107,11 @@ function App() {
         screenshots={screenshots}
       />
 
-      <section className="logo-strip">
-        <span>Built for</span>
-        <strong>Nursery Schools</strong>
-        <strong>Primary Schools</strong>
-        <strong>Secondary Schools</strong>
-        <strong>Private Institutions</strong>
-      </section>
+      <LogoStrip />
 
-      <section id="features" className="section">
-        <div className="section-heading">
-          <span>Core Modules</span>
-          <h2>Everything a school needs to look organized, serious and modern.</h2>
-          <p>Schugnosis is designed for schools that want structure, beauty, speed and reliability without depending on internet connection.</p>
-        </div>
+      <Features />
 
-        <div className="feature-grid">
-          {features.map((feature) => (
-            <motion.div className="feature-card" key={feature.title} whileHover={{ y: -8 }}>
-              <feature.icon size={26} />
-              <h3>{feature.title}</h3>
-              <p>{feature.text}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <section id="finance" className="finance-section">
-        <div className="finance-copy">
-          <span>Accountant Friendly</span>
-          <h2>A finance module that schools can actually understand.</h2>
-          <p>Track expected fees, payments, balances, cashbook entries, receipts, student statements and debtors from one clean finance dashboard.</p>
-
-          <div className="finance-tags">
-            {financeCards.map((item) => <span key={item}><BadgeCheck size={15} />{item}</span>)}
-          </div>
-        </div>
-
-        <div className="finance-display">
-          <div className="market-card">
-            <div className="market-header"><span>Monthly Revenue</span><strong>Finance Analytics</strong></div>
-            <div className="market-bars">
-              {[35, 62, 48, 78, 44, 92, 70, 84, 55, 96, 74, 88].map((height, index) => (
-                <i key={index} style={{ height: `${height}%` }}></i>
-              ))}
-            </div>
-            <div className="market-stats">
-              <div><span>Total Paid</span><strong>₦2,450,000</strong></div>
-              <div><span>Outstanding</span><strong>₦320,000</strong></div>
-            </div>
-          </div>
-
-          <div className="browser-frame small-frame">
-            <div className="browser-dots"><span></span><span></span><span></span></div>
-            <img src={screenshots.finance} alt="Finance dashboard" />
-          </div>
-        </div>
-      </section>
+      <Finance screenshots={screenshots} />
 
       <section id="showcase" className="section showcase-section">
         <div className="section-heading showcase-heading">
