@@ -8,17 +8,23 @@ import Navbar from "../components/layout/Navbar";
 import Hero from "../components/sections/Hero";
 import LogoStrip from "../components/sections/LogoStrip";
 import Features from "../components/sections/Features";
-import Finance from "../components/sections/Finance";
-import Showcase from "../components/sections/Showcase";
-import Installation from "../components/sections/Installation";
-import Offline from "../components/sections/Offline";
+import PlatformExperience from "../components/sections/PlatformExperience.jsx";
+import FutureEducation from "../components/sections/FutureEducation";
+import Future from "../components/sections/Future";
+import WhyUgnosis from "../components/sections/WhyUgnosis";
+import Ecosystem from "../components/sections/Ecosystem";
+import Journey from "../components/sections/Journey";
+import Philosophy from "../components/sections/Philosophy";
 
-function Home({
-  whatsappLink,
-  screenshots,
-  pricingPlans,
-  faqs,
-}) {
+import {
+    whatsappLink,
+    screenshots,
+    pricingPlans,
+    faqs,
+} from "../data/siteData";
+
+
+function Home() {
   return (
     <main>
       <Navbar whatsappLink={whatsappLink} />
@@ -28,42 +34,29 @@ function Home({
         screenshots={screenshots}
       />
 
+      <FutureEducation />
+
       <LogoStrip />
 
       <Features />
 
-      <Finance screenshots={screenshots} />
+      <PlatformExperience />
 
-      <Showcase />
+      <Future />
 
-      <Installation />
+      <Journey />
 
-      <Offline />
+      <Philosophy />
 
-      <section id="pricing" className="pricing-section">
-        <div className="section-heading">
-          <span>Pricing</span>
-          <h2>Choose the package that fits the school’s current stage.</h2>
-          <p>Exact pricing depends on school size, setup needs and support requirements.</p>
-        </div>
+      <WhyUgnosis />
 
-        <div className="pricing-grid">
-          {pricingPlans.map((plan) => (
-            <div className={`price-card ${plan.featured ? "featured-price" : ""}`} key={plan.name}>
-              <span className="package-label">{plan.name}</span>
-              <h3>{plan.price}</h3>
-              <p>{plan.text}</p>
-              <ul>{plan.items.map((item) => <li key={item}>{item}</li>)}</ul>
-              <a href={whatsappLink} target="_blank" className="primary-btn">Ask for Quote</a>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Ecosystem />
+
 
       <section id="faq" className="faq-section">
         <div className="section-heading">
           <span>Questions Schools Ask</span>
-          <h2>Clear answers before the first demo.</h2>
+          <h2>Everything you need to know before adopting SCHUGNOSIS.</h2>
         </div>
 
         <div className="faq-grid">
@@ -79,17 +72,29 @@ function Home({
 
       <section id="contact" className="contact-section">
         <div>
-          <span>Ready for Demonstration?</span>
-          <h2>Let your school feel organized from the first click.</h2>
-          <p>Request a live demo and see how Schugnosis can organize records, finance, results, receipts and school administration.</p>
+          <span>Begin Your Transformation</span>
+
+          <h2>
+          Build a more intelligent institution with SCHUGNOSIS.
+          </h2>
+
+          <p>
+          Whether you're modernising administration, improving communication,
+          strengthening student services or preparing for the future of
+          educational intelligence, our team is ready to help you begin.
+          </p>
         </div>
 
         <div className="contact-card">
           <MessageCircle size={28} />
-          <h3>Contact UGNOSIS Inc.</h3>
+          <h3>Talk to UGNOSIS</h3>
+          <p>
+          Book a personalised consultation with our team to discover how
+          SCHUGNOSIS can transform your institution.
+          </p>
           <p>Phone / WhatsApp: +234 912 625 9753</p>
           <p>Email: bonditsugnosis@gmail.com</p>
-          <p>Ask for demo, pricing, installation or school onboarding.</p>
+          <p>Schedule a Consultation</p>
           <a className="primary-btn" href={whatsappLink} target="_blank">Chat on WhatsApp <ArrowRight size={18} /></a>
         </div>
       </section>      

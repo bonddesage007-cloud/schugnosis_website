@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
+
 import {
   ArrowRight,
-  CreditCard,
-  Lock,
-  MonitorSmartphone,
-  ReceiptText,
+  Cpu,
+  GraduationCap,
   ShieldCheck,
   Sparkles,
+  BrainCircuit,
+  Building2,
 } from "lucide-react";
 
 function Hero({ whatsappLink, screenshots }) {
@@ -23,17 +24,18 @@ function Hero({ whatsappLink, screenshots }) {
       >
         <div className="eyebrow">
           <Sparkles size={16} />
-          Premium offline school management for modern Nigerian schools
+          The Educational Operating System by UGNOSIS
         </div>
 
         <h1>
-          Schugnosis turns school administration into a beautiful digital
-          command center.
+          Reimagining how modern schools learn, operate and grow.
         </h1>
 
         <p>
-          Manage students, staff, finance, report cards, receipts, ID cards,
-          backups and school records from one elegant offline desktop system.
+          SCHUGNOSIS™ is more than school management software.
+          It is an Educational Operating System that brings together
+          administration, learning, communication, campus life and
+          institutional intelligence into one connected platform.
         </p>
 
         <div className="hero-actions">
@@ -43,25 +45,32 @@ function Hero({ whatsappLink, screenshots }) {
             rel="noopener noreferrer"
             className="primary-btn"
           >
-            Book a Demo <ArrowRight size={18} />
+            Request a Demo
+            <ArrowRight size={18} />
           </a>
 
-          <a href="#showcase" className="secondary-btn">
-            View Screenshots
+          <a
+            href="#features"
+            className="secondary-btn"
+          >
+            Explore the Platform
           </a>
         </div>
 
         <div className="trust-row">
           <span>
-            <ShieldCheck size={16} /> Offline Ready
+            <GraduationCap size={16} />
+            Educational Operating System
           </span>
 
           <span>
-            <Lock size={16} /> Local Backup
+            <ShieldCheck size={16} />
+            Built for Modern Schools
           </span>
 
           <span>
-            <MonitorSmartphone size={16} /> Desktop Experience
+            <BrainCircuit size={16} />
+            Powered by Intelligence
           </span>
         </div>
       </motion.div>
@@ -81,25 +90,25 @@ function Hero({ whatsappLink, screenshots }) {
 
           <img
             src={screenshots.dashboard}
-            alt="Schugnosis dashboard"
+            alt="SCHUGNOSIS Educational Operating System"
           />
         </div>
 
         <div className="floating-card card-one">
-          <CreditCard size={18} />
+          <Cpu size={20} />
 
           <div>
-            <strong>₦1.82M</strong>
-            <span>Tracked revenue</span>
+            <strong>Educational OS</strong>
+            <span>One Connected Platform</span>
           </div>
         </div>
 
         <div className="floating-card card-two">
-          <ReceiptText size={18} />
+          <Building2 size={20} />
 
           <div>
-            <strong>Receipt Ready</strong>
-            <span>Auto generated</span>
+            <strong>Institution Ready</strong>
+            <span>Built for Future Schools</span>
           </div>
         </div>
       </motion.div>

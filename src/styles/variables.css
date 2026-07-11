@@ -1,0 +1,14 @@
+:root{
+
+--container:1180px;
+
+--radius:28px;
+
+--shadow:
+0 22px 70px rgba(0,0,0,.18);
+
+--blue:#2563eb;
+
+--heading:var(--heading);
+
+}

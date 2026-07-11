@@ -1,0 +1,72 @@
+Folder PATH listing
+Volume serial number is 00000016 D493:9933
+C:\USERS\USER\SCHUGNOSIS_WEBSITE\SRC
+³   App.css
+³   App.jsx
+³   index.css
+³   main.jsx
+³   
+ÃÄÄÄassets
+³       hero.png
+³       react.svg
+³       schugnosis-logo.png
+³       vite.svg
+³       
+ÃÄÄÄcomponents
+³   ÃÄÄÄlayout
+³   ³       Navbar.jsx
+³   ³       
+³   ÃÄÄÄsections
+³   ³       Contact.jsx
+³   ³       Ecosystem.jsx
+³   ³       FAQ.jsx
+³   ³       Features.jsx
+³   ³       Finance.jsx
+³   ³       Future.jsx
+³   ³       FutureEducation.jsx
+³   ³       Hero.jsx
+³   ³       Installation.jsx
+³   ³       Journey.jsx
+³   ³       LogoStrip.jsx
+³   ³       Offline.jsx
+³   ³       Philosophy.jsx
+³   ³       Pricing.jsx
+³   ³       Showcase.jsx
+³   ³       WhyUgnosis.jsx
+³   ³       
+³   ÀÄÄÄui
+³           Button.jsx
+³           Card.jsx
+³           Container.jsx
+³           FeatureCard.jsx
+³           Section.jsx
+³           SectionHeading.jsx
+³           StepCard.jsx
+³           
+ÃÄÄÄconstants
+ÃÄÄÄdata
+³       faq.js
+³       finance.js
+³       installation.js
+³       journeyTimeline.js
+³       platformFeatures.js
+³       pricing.js
+³       showcase.js
+³       siteContent.js
+³       siteData.js
+³       
+ÃÄÄÄhooks
+ÃÄÄÄpages
+³       Home.jsx
+³       
+ÃÄÄÄstyles
+³       buttons.css
+³       cards.css
+³       globals.css
+³       layout.css
+³       theme.js
+³       tokens.js
+³       typography.css
+³       variables.css
+³       
+ÀÄÄÄutils

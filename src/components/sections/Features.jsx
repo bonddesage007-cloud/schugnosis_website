@@ -1,35 +1,25 @@
-import { motion } from "framer-motion";
+import SectionHeading from "../ui/SectionHeading";
+import FeatureCard from "../ui/FeatureCard";
+
 import { platformFeatures } from "../../data/platformFeatures";
 
 function Features() {
   return (
     <section id="features" className="section">
-      <div className="section-heading">
-        <span>Core Modules</span>
-
-        <h2>
-          Everything a school needs to look organized, serious and modern.
-        </h2>
-
-        <p>
-          Schugnosis is designed for schools that want structure, beauty,
-          speed and reliability without depending on internet connection.
-        </p>
-      </div>
+      <SectionHeading
+        eyebrow="The SCHUGNOSIS Platform"
+        title="One intelligent platform powering every part of school life."
+        description="SCHUGNOSIS is the Educational Operating System developed by UGNOSIS to unify academics, administration, communication, finance, student services and institutional intelligence into one connected ecosystem."
+      />
 
       <div className="feature-grid">
         {platformFeatures.map((feature) => (
-          <motion.div
-            className="feature-card"
+          <FeatureCard
             key={feature.title}
-            whileHover={{ y: -8 }}
-          >
-            <feature.icon size={26} />
-
-            <h3>{feature.title}</h3>
-
-            <p>{feature.text}</p>
-          </motion.div>
+            icon={feature.icon}
+            title={feature.title}
+            text={feature.text}
+          />
         ))}
       </div>
     </section>
