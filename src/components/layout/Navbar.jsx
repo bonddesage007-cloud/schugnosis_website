@@ -3,37 +3,54 @@ import logo from "../../assets/schugnosis-logo.png";
 function Navbar({ whatsappLink }) {
   return (
     <nav className="navbar">
-      <a className="brand premium-brand" href="#top" aria-label="Schugnosis home">
+
+      <a
+        href="#top"
+        className="brand premium-brand"
+      >
         <span className="brand-logo-shell">
           <img
             src={logo}
-            alt="Schugnosis Logo"
+            alt="SCHUGNOSIS"
             className="brand-logo"
           />
         </span>
 
         <span className="brand-copy">
-          <strong>Schugnosis</strong>
-          <span>School DBMS</span>
+          <strong>SCHUGNOSIS</strong>
+          <span>Educational Operating System</span>
         </span>
       </a>
 
       <div className="nav-links">
-        <a href="#features">Features</a>
-        <a href="#finance">Finance</a>
-        <a href="#showcase">Showcase</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
+        <a href="#features">Platform</a>
+
+        <a href="#future">
+          Future
+        </a>
+
+        <a href="#journey">
+          Journey
+        </a>
+
+        <a href="#philosophy">
+          Philosophy
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
       </div>
 
       <a
-        className="nav-cta"
         href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
+        className="nav-cta"
       >
-        Request Demo
+        Let's Talk
       </a>
+
     </nav>
   );
 }

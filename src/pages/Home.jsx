@@ -6,9 +6,10 @@ import {
 
 import Navbar from "../components/layout/Navbar";
 import Hero from "../components/sections/Hero";
+import WhoWeAre from "../components/sections/WhoWeAre";
 import LogoStrip from "../components/sections/LogoStrip";
 import Features from "../components/sections/Features";
-import PlatformExperience from "../components/sections/PlatformExperience.jsx";
+import CampusCircle from "../components/sections/CampusCircle";
 import FutureEducation from "../components/sections/FutureEducation";
 import Future from "../components/sections/Future";
 import WhyUgnosis from "../components/sections/WhyUgnosis";
@@ -34,13 +35,15 @@ function Home() {
         screenshots={screenshots}
       />
 
+      <WhoWeAre />
+
       <FutureEducation />
 
       <LogoStrip />
 
       <Features />
 
-      <PlatformExperience />
+      <CampusCircle />
 
       <Future />
 

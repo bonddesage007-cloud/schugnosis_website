@@ -1,9 +1,6 @@
 @import "./styles/variables.css";
 @import "./styles/globals.css";
-@import "./styles/layout.css";
 @import "./styles/buttons.css";
-@import "./styles/cards.css";
-@import "./styles/typography.css";
 
 main {
   overflow: hidden;
@@ -284,28 +281,69 @@ main {
   top: 80px;
 }
 
-.logo-strip {
-  margin: 0 auto;
-  width: min(1180px, calc(100% - 32px));
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  align-items: center;
-  justify-content: center;
-  padding: 22px;
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.04);
+/* ===========================
+   UGNOSIS PRINCIPLES
+=========================== */
+
+.principles-strip{
+
+    width:min(1180px,calc(100% - 32px));
+    margin:40px auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+
 }
 
-.logo-strip span {
-  color: #93c5fd;
-  font-weight: 900;
+.principle-item{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 22px;
+    border-radius:999px;
+    background:white;
+    border:1px solid rgba(37,99,235,.08);
+    box-shadow:0 10px 35px rgba(15,23,42,.05);
+    transition:.3s ease;
+
 }
 
-.logo-strip strong {
-  color: white;
-  font-weight: 900;
+.principle-item:hover{
+
+    transform:translateY(-4px);
+    border-color:rgba(37,99,235,.25);
+
+}
+
+.principle-item svg{
+
+    color:#2563eb;
+
+}
+
+.principle-item span{
+
+    color:#183153;
+    font-weight:700;
+    font-size:.95rem;
+
+}
+
+@media(max-width:900px){
+
+.principles-strip{
+justify-content:flex-start;
+overflow-x:auto;
+padding-bottom:10px;
+}
+
+.principle-item{
+
+flex:0 0 auto;
+}
+
 }
 
 .section,
@@ -1731,6 +1769,66 @@ text-align:center;
 
 .journey-grid{
 grid-template-columns:1fr;
+}
+
+}
+
+/* ===========================
+   WHO WE ARE
+=========================== */
+
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.who-card {
+  padding: 34px;
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.95),
+      rgba(244,247,255,.88)
+    );
+
+  border:1px solid rgba(37,99,235,.08);
+
+  box-shadow:
+    0 20px 60px rgba(15,23,42,.06);
+
+  transition:.35s;
+}
+
+.who-card:hover{
+  transform:translateY(-8px);
+}
+
+.who-card svg{
+  color:#2563eb;
+  margin-bottom:22px;
+}
+
+.who-card h3{
+  color:#102649;
+  margin-bottom:14px;
+  font-size:1.4rem;
+}
+
+.who-card p{
+  color:#5f6f82;
+  line-height:1.9;
+}
+
+@media(max-width:900px){
+
+.who-grid{
+
+grid-template-columns:1fr;
+
 }
 
 }
