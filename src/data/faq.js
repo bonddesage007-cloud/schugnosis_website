@@ -1,22 +1,26 @@
 export const faqs = [
   {
-    q: "Can Schugnosis work without internet?",
-    a: "Yes. Schugnosis Lite is designed as an offline desktop system for single-PC school administration.",
+    q: "What exactly is SCHUGNOSIS?",
+    a: "SCHUGNOSIS is an Educational Operating System developed by UGNOSIS. Rather than being just another school management application, it provides a unified platform that helps schools understand, manage and continuously improve every aspect of institutional life.",
   },
+
   {
-    q: "Where is the school data stored?",
-    a: "The database is stored locally on the school computer, with backup options for flash drive or external storage.",
+    q: "How is SCHUGNOSIS different from traditional school management software?",
+    a: "Traditional software focuses on storing records. SCHUGNOSIS focuses on understanding institutions. Every module—from academics and administration to finance and communication—works together to provide meaningful insight for better decision-making.",
   },
+
   {
-    q: "Can it print report cards, receipts and ID cards?",
-    a: "Yes. Schugnosis supports printable report cards, payment receipts, student statements and ID cards.",
+    q: "Will SCHUGNOSIS include Artificial Intelligence?",
+    a: "Yes. AI is part of the long-term vision. Future releases will introduce intelligent assistants, predictive insights, personalised academic support and institutional intelligence while keeping school data secure and under the school's control.",
   },
+
   {
-    q: "Can the school backup its records?",
-    a: "Yes. The Settings section includes backup and import options to protect school records.",
+    q: "Can SCHUGNOSIS grow with our institution?",
+    a: "Absolutely. Schools can begin with core operational modules and gradually expand into communication, student safety, multi-campus management, AI-powered services and advanced institutional intelligence as their needs evolve.",
   },
+
   {
-    q: "Can it be upgraded later?",
-    a: "Yes. Schugnosis Lite can later grow into a multi-user or server-based version when the school is ready.",
+    q: "Why was SCHUGNOSIS created?",
+    a: "SCHUGNOSIS exists because schools deserve more than software. They deserve technology that helps them understand their students, staff, operations and decisions, enabling them to build stronger learning environments and better educational outcomes.",
   },
 ];

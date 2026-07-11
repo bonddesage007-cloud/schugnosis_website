@@ -48,7 +48,7 @@ function Future() {
   ];
 
   return (
-    <section className="future-section">
+    <section id="future" className="future-section">
 
       <div className="future-heading">
 

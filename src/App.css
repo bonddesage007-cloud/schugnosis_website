@@ -76,32 +76,7 @@ main {
   color: white;
 }
 
-.nav-cta,
-.primary-btn,
-.secondary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 0 18px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 900;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-}
 
-.nav-cta,
-.primary-btn {
-  color: white;
-  background: linear-gradient(135deg, #2563eb, #0f172a);
-  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.28);
-}
-
-.secondary-btn {
-  color: #dbeafe;
-  background: rgba(255, 255, 255, 0.08);
-}
 
 .hero-section {
   position: relative;
@@ -609,10 +584,6 @@ flex:0 0 auto;
     width: calc(100% - 20px);
   }
 
-  .nav-cta {
-    display: none;
-  }
-
   .hero-section {
     padding-inline: 20px;
   }
@@ -727,12 +698,6 @@ a[target="_blank"] {
   filter: brightness(1.08);
 }
 
-.primary-btn:hover,
-.secondary-btn:hover,
-.nav-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 42px rgba(37, 99, 235, 0.38);
-}
 
 .price-card,
 .feature-card,
@@ -1131,12 +1096,6 @@ a[target="_blank"] {
   color: #2563eb;
 }
 
-.nav-cta {
-  color: white;
-  background: linear-gradient(135deg, #2563eb, #6d28d9);
-  box-shadow: 0 16px 34px rgba(37,99,235,0.25);
-}
-
 .hero-section {
   background:
     radial-gradient(circle at top left, rgba(37,99,235,0.12), transparent 34%),
@@ -1170,11 +1129,6 @@ a[target="_blank"] {
   border-color: rgba(37,99,235,0.14);
 }
 
-.secondary-btn {
-  color: #0f1f3d;
-  background: rgba(255,255,255,0.82);
-  border-color: rgba(37,99,235,0.16);
-}
 
 @media (max-width: 980px) {
   .brand-logo-shell {

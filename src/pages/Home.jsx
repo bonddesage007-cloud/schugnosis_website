@@ -21,8 +21,9 @@ import {
     whatsappLink,
     screenshots,
     pricingPlans,
-    faqs,
 } from "../data/siteData";
+
+import { faqs } from "../data/faq";
 
 
 function Home() {
@@ -58,8 +59,13 @@ function Home() {
 
       <section id="faq" className="faq-section">
         <div className="section-heading">
-          <span>Questions Schools Ask</span>
-          <h2>Everything you need to know before adopting SCHUGNOSIS.</h2>
+          <span>Frequently Asked Questions</span>
+          <h2>
+            Understanding SCHUGNOSIS.
+          </h2>
+          <p>
+          Discover how the Educational Operating System is helping schools move beyond digital record keeping toward intelligent institutional management.
+          </p>
         </div>
 
         <div className="faq-grid">
@@ -70,6 +76,27 @@ function Home() {
               <p>{faq.a}</p>
             </div>
           ))}
+        </div>
+
+        <div className="faq-card faq-cta">
+          <MessageCircle size={24} />
+
+          <h3>Still have questions?</h3>
+
+          <p>
+            Every school is different, and every conversation starts with understanding.
+            Let's discuss your institution, your goals and how SCHUGNOSIS can support
+            your journey.
+          </p>
+
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="primary-btn"
+          >
+            Let's Talk
+          </a>
         </div>
       </section>
 
@@ -92,13 +119,13 @@ function Home() {
           <MessageCircle size={28} />
           <h3>Talk to UGNOSIS</h3>
           <p>
-          Book a personalised consultation with our team to discover how
-          SCHUGNOSIS can transform your institution.
+          Every institution has its own story. We'd love to learn about yours and
+          explore how SCHUGNOSIS can support your vision.
           </p>
           <p>Phone / WhatsApp: +234 912 625 9753</p>
           <p>Email: bonditsugnosis@gmail.com</p>
-          <p>Schedule a Consultation</p>
-          <a className="primary-btn" href={whatsappLink} target="_blank">Chat on WhatsApp <ArrowRight size={18} /></a>
+          <p>Let's start the conversation.</p>
+          <a className="primary-btn" href={whatsappLink} target="_blank">Let's Talk <ArrowRight size={18} /></a>
         </div>
       </section>      
 

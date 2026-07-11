@@ -1,26 +1,164 @@
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  min-height:44px;
-  padding:0 18px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:900;
-  transition:.3s ease;
+/* ==========================================
+   BUTTON SYSTEM
+   SCHUGNOSIS / UGNOSIS
+========================================== */
+
+.btn,
+.primary-btn,
+.secondary-btn,
+.nav-cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.65rem;
+
+    padding:.95rem 1.6rem;
+
+    min-height:48px;
+
+    border:none;
+    border-radius:12px;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    font-size:.95rem;
+    font-weight:600;
+    letter-spacing:-0.02em;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
 }
 
-.btn-primary{
-  color:#fff;
-  background:linear-gradient(135deg,#2563eb,#0f172a);
+/* ==========================================
+   PRIMARY
+========================================== */
+
+.primary-btn,
+.btn-primary,
+.nav-cta{
+
+    background:#0f172a;
+
+    color:#ffffff;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 10px 24px rgba(15,23,42,.14);
+
 }
 
+.primary-btn:hover,
+.btn-primary:hover,
+.nav-cta:hover{
+
+    background:#16233c;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 14px 32px rgba(15,23,42,.18);
+
+}
+
+.primary-btn:active,
+.btn-primary:active,
+.nav-cta:active{
+
+    transform:translateY(0);
+
+}
+
+/* ==========================================
+   SECONDARY
+========================================== */
+
+.secondary-btn,
 .btn-secondary{
-  color:#0f172a;
-  background:#fff;
+
+    background:#ffffff;
+
+    color:#0f172a;
+
+    border:1px solid rgba(15,23,42,.12);
+
 }
 
-.btn:hover{
-  transform:translateY(-2px);
+.secondary-btn:hover,
+.btn-secondary:hover{
+
+    background:#f8fafc;
+
+    border-color:#cbd5e1;
+
+    transform:translateY(-2px);
+
+}
+
+.secondary-btn:active,
+.btn-secondary:active{
+
+    transform:translateY(0);
+
+}
+
+/* ==========================================
+   FOCUS
+========================================== */
+
+.primary-btn:focus-visible,
+.secondary-btn:focus-visible,
+.btn:focus-visible,
+.nav-cta:focus-visible{
+
+    outline:none;
+
+    box-shadow:
+        0 0 0 3px rgba(37,99,235,.15);
+
+}
+
+/* ==========================================
+   ICONS
+========================================== */
+
+.primary-btn svg,
+.secondary-btn svg,
+.nav-cta svg{
+
+    width:18px;
+    height:18px;
+
+    transition:transform .25s ease;
+
+}
+
+.primary-btn:hover svg,
+.secondary-btn:hover svg,
+.nav-cta:hover svg{
+
+    transform:translateX(2px);
+
+}
+
+/* ==========================================
+   DISABLED
+========================================== */
+
+button:disabled,
+.primary-btn.disabled,
+.secondary-btn.disabled{
+
+    opacity:.55;
+
+    cursor:not-allowed;
+
+    pointer-events:none;
+
 }

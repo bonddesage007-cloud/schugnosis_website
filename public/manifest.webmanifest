@@ -1,0 +1,18 @@
+{
+  "name": "SCHUGNOSIS",
+  "short_name": "SCHUGNOSIS",
+  "description": "The Educational Operating System by UGNOSIS.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#0b3d91",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

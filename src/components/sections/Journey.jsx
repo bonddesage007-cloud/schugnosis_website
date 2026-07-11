@@ -3,7 +3,7 @@ import { journeyTimeline } from "../../data/journeyTimeline";
 
 function Journey() {
   return (
-    <section className="journey-section">
+    <section id="journey" className="journey-section">
 
       <SectionHeading
         eyebrow="UGNOSIS Journey"

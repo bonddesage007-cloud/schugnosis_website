@@ -45,7 +45,7 @@ function Hero({ whatsappLink, screenshots }) {
             rel="noopener noreferrer"
             className="primary-btn"
           >
-            Request a Demo
+            Let's talk
             <ArrowRight size={18} />
           </a>
 
