@@ -1,0 +1,993 @@
+/* =========================================================
+   UGNOSIS FOUNDATION CHAPTER
+   ========================================================= */
+
+.foundation-chapter {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+
+  padding:
+    128px 0 118px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(75, 129, 224, 0.09),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 86% 22%,
+      rgba(149, 100, 226, 0.07),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 72% 80%,
+      rgba(68, 170, 164, 0.06),
+      transparent 24%
+    ),
+    linear-gradient(
+      180deg,
+      #fbfcff 0%,
+      #f4f7fd 48%,
+      #fbfcff 100%
+    );
+}
+
+.foundation-chapter::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -3;
+
+  background-image:
+    linear-gradient(
+      rgba(47, 91, 164, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(47, 91, 164, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    76px 76px;
+
+  pointer-events: none;
+}
+
+.foundation-shell {
+  position: relative;
+
+  z-index: 3;
+
+  width:
+    min(1180px, calc(100% - 40px));
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   DOODLE FIELD
+   ========================================================= */
+
+.foundation-doodle-field {
+  position: absolute;
+
+  z-index: -1;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.foundation-doodle {
+  position: absolute;
+
+  fill: none;
+
+  stroke-width: 1.25;
+
+  opacity: 0.075;
+}
+
+.doodle-brain {
+  width: 118px;
+  height: 118px;
+
+  top: 8%;
+  left: 3%;
+
+  color: #376fce;
+
+  transform:
+    rotate(-12deg);
+}
+
+.doodle-graduation {
+  width: 92px;
+  height: 92px;
+
+  top: 16%;
+  right: 7%;
+
+  color: #8565c9;
+
+  transform:
+    rotate(13deg);
+}
+
+.doodle-network {
+  width: 150px;
+  height: 150px;
+
+  top: 46%;
+  left: -24px;
+
+  color: #2c90a8;
+
+  transform:
+    rotate(7deg);
+}
+
+.doodle-school {
+  width: 120px;
+  height: 120px;
+
+  right: 2%;
+  top: 56%;
+
+  color: #d29c40;
+
+  transform:
+    rotate(-8deg);
+}
+
+.doodle-message {
+  width: 82px;
+  height: 82px;
+
+  left: 13%;
+  bottom: 6%;
+
+  color: #6c73d5;
+
+  transform:
+    rotate(11deg);
+}
+
+.doodle-shield {
+  width: 94px;
+  height: 94px;
+
+  right: 17%;
+  bottom: 5%;
+
+  color: #3987be;
+
+  transform:
+    rotate(-9deg);
+}
+
+.doodle-lightbulb {
+  width: 66px;
+  height: 66px;
+
+  left: 47%;
+  top: 5%;
+
+  color: #d4a845;
+
+  opacity: 0.06;
+}
+
+.foundation-node {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(53, 109, 203, 0.18);
+
+  box-shadow:
+    0 0 0 9px rgba(53, 109, 203, 0.025);
+}
+
+.node-one {
+  top: 27%;
+  left: 18%;
+}
+
+.node-two {
+  top: 36%;
+  right: 15%;
+}
+
+.node-three {
+  left: 31%;
+  bottom: 22%;
+}
+
+.node-four {
+  right: 31%;
+  bottom: 16%;
+}
+
+.foundation-line {
+  position: absolute;
+
+  height: 1px;
+
+  opacity: 0.13;
+
+  transform-origin: left center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(53, 109, 203, 0),
+      rgba(53, 109, 203, 0.55),
+      rgba(53, 109, 203, 0)
+    );
+}
+
+.line-one {
+  width: 270px;
+
+  top: 27%;
+  left: 18%;
+
+  transform:
+    rotate(16deg);
+}
+
+.line-two {
+  width: 230px;
+
+  top: 37%;
+  right: 14%;
+
+  transform:
+    rotate(145deg);
+}
+
+.line-three {
+  width: 360px;
+
+  left: 31%;
+  bottom: 22%;
+
+  transform:
+    rotate(-12deg);
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.foundation-intro {
+  max-width: 890px;
+
+  margin:
+    0 auto 68px;
+
+  text-align: center;
+}
+
+.foundation-kicker {
+  display: inline-flex;
+
+  margin-bottom: 20px;
+
+  color: #356dcb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.19em;
+
+  text-transform: uppercase;
+}
+
+.foundation-intro h2,
+.foundation-era-copy h2 {
+  margin: 0;
+
+  color: #0b2147;
+
+  font-family:
+    var(--heading);
+
+  font-size:
+    clamp(38px, 4.6vw, 64px);
+
+  font-weight: 700;
+
+  line-height: 1.12;
+
+  letter-spacing: 0.005em;
+
+  text-wrap: balance;
+}
+
+.foundation-intro p {
+  max-width: 760px;
+
+  margin:
+    25px auto 0;
+
+  color: #63738d;
+
+  font-size: 17px;
+
+  line-height: 1.9;
+
+  text-wrap: pretty;
+}
+
+/* =========================================================
+   BELIEF CARDS
+   ========================================================= */
+
+.foundation-belief-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.foundation-belief-card {
+  position: relative;
+
+  min-height: 330px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(31, 71, 132, 0.09);
+
+  border-radius: 26px;
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  box-shadow:
+    0 18px 48px rgba(25, 53, 94, 0.055);
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.foundation-belief-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #477ed9,
+      #76a6e7,
+      transparent
+    );
+
+  transition:
+    opacity 0.3s ease;
+}
+
+.foundation-belief-card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(53, 109, 203, 0.18);
+
+  box-shadow:
+    0 26px 64px rgba(25, 53, 94, 0.09);
+}
+
+.foundation-belief-card:hover::before {
+  opacity: 1;
+}
+
+.foundation-belief-featured {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(237, 244, 255, 0.92),
+      rgba(255, 255, 255, 0.86)
+    );
+
+  border-color:
+    rgba(53, 109, 203, 0.14);
+}
+
+.foundation-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: auto;
+
+  color: #3b72cf;
+}
+
+.foundation-card-topline > span {
+  color: #9aa9be;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+}
+
+.foundation-belief-card h3 {
+  margin:
+    56px 0 14px;
+
+  color: #10284f;
+
+  font-family:
+    var(--heading);
+
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+.foundation-belief-card p {
+  margin: 0;
+
+  color: #66768f;
+
+  font-size: 14px;
+
+  line-height: 1.85;
+}
+
+.foundation-belief-card strong {
+  color: #304e78;
+}
+
+/* =========================================================
+   EDUCATION ERA
+   ========================================================= */
+
+.foundation-era {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.92fr)
+    minmax(0, 1.08fr);
+
+  gap: 84px;
+
+  align-items: center;
+
+  margin-top: 118px;
+
+  padding:
+    72px;
+
+  border:
+    1px solid rgba(38, 80, 145, 0.09);
+
+  border-radius: 36px;
+
+  background:
+    radial-gradient(
+      circle at 92% 8%,
+      rgba(95, 145, 231, 0.1),
+      transparent 25%
+    ),
+    rgba(255, 255, 255, 0.64);
+
+  box-shadow:
+    0 30px 80px rgba(25, 53, 94, 0.06);
+
+  backdrop-filter:
+    blur(16px);
+
+  -webkit-backdrop-filter:
+    blur(16px);
+}
+
+.foundation-era-copy h2 {
+  font-size:
+    clamp(34px, 3.8vw, 52px);
+}
+
+.foundation-era-copy > p {
+  margin:
+    22px 0 0;
+
+  color: #64748c;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+.foundation-explore-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 27px;
+
+  color: #235ebd;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.foundation-explore-link svg {
+  transition:
+    transform 0.25s ease;
+}
+
+.foundation-explore-link:hover svg {
+  transform:
+    translateX(4px);
+}
+
+/* =========================================================
+   CHANGE SIGNALS
+   ========================================================= */
+
+.foundation-signals {
+  display: grid;
+
+  gap: 10px;
+}
+
+.foundation-signal {
+  display: grid;
+
+  grid-template-columns:
+    52px minmax(0, 1fr);
+
+  gap: 18px;
+
+  align-items: flex-start;
+
+  padding:
+    21px 22px;
+
+  border:
+    1px solid rgba(29, 67, 124, 0.075);
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.7);
+
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease;
+}
+
+.foundation-signal:hover {
+  transform:
+    translateX(5px);
+
+  border-color:
+    rgba(53, 109, 203, 0.15);
+
+  background:
+    rgba(255, 255, 255, 0.94);
+}
+
+.foundation-signal-icon {
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 16px;
+
+  color: #3972ce;
+
+  background:
+    #edf4ff;
+
+  border:
+    1px solid rgba(53, 109, 203, 0.09);
+}
+
+.foundation-signal span {
+  display: block;
+
+  margin:
+    2px 0 6px;
+
+  color: #3972ce;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.17em;
+
+  text-transform: uppercase;
+}
+
+.foundation-signal h3 {
+  margin:
+    0 0 7px;
+
+  color: #142e58;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  line-height: 1.35;
+}
+
+.foundation-signal p {
+  margin: 0;
+
+  color: #6b7b92;
+
+  font-size: 13px;
+
+  line-height: 1.72;
+}
+
+/* =========================================================
+   PRINCIPLES
+   ========================================================= */
+
+.foundation-principles {
+  margin-top: 56px;
+
+  padding:
+    25px 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 26px;
+
+  border-top:
+    1px solid rgba(31, 71, 132, 0.08);
+
+  border-bottom:
+    1px solid rgba(31, 71, 132, 0.08);
+}
+
+.foundation-principles-copy {
+  flex:
+    0 0 220px;
+}
+
+.foundation-principles-copy span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #356dcb;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.foundation-principles-copy p {
+  margin: 0;
+
+  color: #687991;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+.foundation-principle-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+}
+
+.foundation-principle {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding:
+    9px 11px;
+
+  border:
+    1px solid rgba(35, 78, 143, 0.08);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  color: #365375;
+}
+
+.foundation-principle svg {
+  color: #497fd5;
+}
+
+.foundation-principle span {
+  font-size: 10px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+  .foundation-belief-grid {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .foundation-belief-card:last-child {
+    grid-column:
+      1 / -1;
+
+    min-height: 270px;
+  }
+
+  .foundation-era {
+    grid-template-columns:
+      1fr;
+
+    gap: 48px;
+
+    padding:
+      54px;
+  }
+
+  .foundation-era-copy {
+    max-width: 720px;
+  }
+
+  .foundation-principles {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+  }
+
+  .foundation-principles-copy {
+    flex:
+      0 0 auto;
+
+    max-width: 400px;
+  }
+
+  .foundation-principle-row {
+    justify-content:
+      flex-start;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .foundation-chapter {
+    padding:
+      82px 0 74px;
+  }
+
+  .foundation-shell {
+    width:
+      calc(100% - 28px);
+  }
+
+  .foundation-doodle {
+    opacity: 0.05;
+  }
+
+  .doodle-network,
+  .doodle-message,
+  .doodle-lightbulb,
+  .foundation-line {
+    display: none;
+  }
+
+  .foundation-intro {
+    margin-bottom: 42px;
+
+    text-align: left;
+  }
+
+  .foundation-kicker {
+    margin-bottom: 15px;
+
+    font-size: 9px;
+  }
+
+  .foundation-intro h2,
+  .foundation-era-copy h2 {
+    font-size:
+      clamp(29px, 8.8vw, 41px);
+
+    line-height: 1.18;
+  }
+
+  .foundation-intro p {
+    margin-top: 19px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+  }
+
+  .foundation-belief-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 12px;
+  }
+
+  .foundation-belief-card,
+  .foundation-belief-card:last-child {
+    grid-column: auto;
+
+    min-height: 0;
+
+    padding: 23px;
+
+    border-radius: 21px;
+  }
+
+  .foundation-belief-card h3 {
+    margin:
+      40px 0 11px;
+
+    font-size: 17px;
+  }
+
+  .foundation-belief-card p {
+    font-size: 13px;
+  }
+
+  .foundation-era {
+    gap: 38px;
+
+    margin-top: 68px;
+
+    padding:
+      34px 20px;
+
+    border-radius: 25px;
+  }
+
+  .foundation-era-copy > p {
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+  .foundation-explore-link {
+    align-items: flex-start;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+  }
+
+  .foundation-signal {
+    grid-template-columns:
+      44px minmax(0, 1fr);
+
+    gap: 14px;
+
+    padding:
+      18px 16px;
+
+    border-radius: 17px;
+  }
+
+  .foundation-signal-icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 14px;
+  }
+
+  .foundation-signal h3 {
+    font-size: 14px;
+  }
+
+  .foundation-signal p {
+    font-size: 12px;
+  }
+
+  .foundation-principles {
+    margin-top: 40px;
+
+    padding:
+      22px 0;
+
+    overflow: hidden;
+  }
+
+  .foundation-principle-row {
+    width: 100%;
+
+    flex-wrap: nowrap;
+
+    justify-content:
+      flex-start;
+
+    overflow-x: auto;
+
+    padding-bottom: 5px;
+
+    scrollbar-width: none;
+  }
+
+  .foundation-principle-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .foundation-principle {
+    flex:
+      0 0 auto;
+  }
+}

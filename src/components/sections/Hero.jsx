@@ -1,42 +1,116 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 import {
   ArrowRight,
-  Cpu,
   GraduationCap,
   ShieldCheck,
-  Sparkles,
-  BrainCircuit,
-  Building2,
+  HeartHandshake,
 } from "lucide-react";
 
-function Hero({ whatsappLink, screenshots }) {
+function Hero({ whatsappLink, backgroundMedia }) {
+  const [videoReady, setVideoReady] = useState(false);
+
+  const hasImage =
+    backgroundMedia?.type === "image" &&
+    Boolean(backgroundMedia?.src);
+
+  const hasVideo =
+    backgroundMedia?.type === "video" &&
+    Boolean(backgroundMedia?.src);
+
   return (
-    <section id="top" className="hero-section">
-      <div className="orb orb-one"></div>
-      <div className="orb orb-two"></div>
+    <section
+      id="top"
+      className="hero-section hero-section-calm"
+    >
+      <div
+        className="hero-media-layer"
+        aria-hidden="true"
+      >
+        {hasImage ? (
+          <div
+            className="hero-background-media hero-media-image"
+            style={{
+              backgroundImage: `url(${backgroundMedia.src})`,
+            }}
+          />
+        ) : null}
+
+        {hasVideo ? (
+          <video
+            className={`hero-background-media hero-media-video ${
+              videoReady ? "hero-media-video-ready" : ""
+            }`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            disablePictureInPicture
+            onCanPlay={() => setVideoReady(true)}
+            onPlaying={() => setVideoReady(true)}
+            aria-hidden="true"
+          >
+            <source
+              src={backgroundMedia.src}
+              type={backgroundMedia.mimeType || "video/mp4"}
+            />
+          </video>
+        ) : null}
+      </div>
+
+      <div
+        className="hero-overlay"
+        aria-hidden="true"
+      />
+
+      <div
+        className="orb orb-one"
+        aria-hidden="true"
+      />
+
+      <div
+        className="orb orb-two"
+        aria-hidden="true"
+      />
+
+      <div
+        className="hero-soft-grid"
+        aria-hidden="true"
+      />
 
       <motion.div
-        className="hero-content"
-        initial={{ opacity: 0, y: 28 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
+        className="hero-content hero-content-centered"
+        initial={{
+          opacity: 0,
+          y: 28,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 0.9,
+        }}
       >
-        <div className="eyebrow">
-          <Sparkles size={16} />
-          The Educational Operating System by UGNOSIS
-        </div>
-
         <h1>
-          Reimagining how modern schools learn, operate and grow.
+          A calmer, more intelligent way for schools to learn,
+          operate and grow.
         </h1>
 
         <p>
-          SCHUGNOSIS™ is more than school management software.
-          It is an Educational Operating System that brings together
-          administration, learning, communication, campus life and
-          institutional intelligence into one connected platform.
+          SCHUGNOSIS™ is an Educational Operating System built
+          to give institutions clarity, structure and peace of
+          mind by bringing administration, learning,
+          communication, campus life and institutional
+          intelligence into one connected platform.
         </p>
+
+        <div className="hero-message">
+          Designed for institutions that want order, trust,
+          beauty and future-readiness.
+        </div>
 
         <div className="hero-actions">
           <a
@@ -45,7 +119,7 @@ function Hero({ whatsappLink, screenshots }) {
             rel="noopener noreferrer"
             className="primary-btn"
           >
-            Let's talk
+            Let&apos;s Talk
             <ArrowRight size={18} />
           </a>
 
@@ -65,51 +139,13 @@ function Hero({ whatsappLink, screenshots }) {
 
           <span>
             <ShieldCheck size={16} />
-            Built for Modern Schools
+            Clarity for Modern Schools
           </span>
 
           <span>
-            <BrainCircuit size={16} />
-            Powered by Intelligence
+            <HeartHandshake size={16} />
+            Built with Peace of Mind
           </span>
-        </div>
-      </motion.div>
-
-      <motion.div
-        className="hero-visual"
-        initial={{ opacity: 0, scale: 0.94, y: 30 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.2 }}
-      >
-        <div className="browser-frame hero-frame">
-          <div className="browser-dots">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-          <img
-            src={screenshots.dashboard}
-            alt="SCHUGNOSIS Educational Operating System"
-          />
-        </div>
-
-        <div className="floating-card card-one">
-          <Cpu size={20} />
-
-          <div>
-            <strong>Educational OS</strong>
-            <span>One Connected Platform</span>
-          </div>
-        </div>
-
-        <div className="floating-card card-two">
-          <Building2 size={20} />
-
-          <div>
-            <strong>Institution Ready</strong>
-            <span>Built for Future Schools</span>
-          </div>
         </div>
       </motion.div>
     </section>

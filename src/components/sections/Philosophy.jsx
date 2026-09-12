@@ -1,59 +1,265 @@
-import SectionHeading from "../ui/SectionHeading";
+import { motion } from "framer-motion";
+
+import {
+  ArrowRight,
+  Eye,
+  HeartHandshake,
+  Lightbulb,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
+
+import "../../styles/philosophy-manifesto.css";
+
+const principles = [
+  {
+    icon: Eye,
+    title: "Understand before building",
+    text: "Technology becomes meaningful when it begins with the people, systems and realities it is meant to serve.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Keep people at the centre",
+    text: "Students, educators, parents and administrators should feel supported by technology — not overwhelmed by it.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Earn trust",
+    text: "Privacy, transparency, reliability and responsible use of intelligence must be part of the architecture from the beginning.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Build for understanding",
+    text: "The goal is not more dashboards. It is better context, better decisions and institutions that understand themselves more clearly.",
+  },
+];
 
 function Philosophy() {
   return (
-    <section id="philosophy" className="philosophy-section">
+    <section
+      id="philosophy"
+      className="philosophy-manifesto"
+    >
+      <div className="philosophy-manifesto-shell">
+        <motion.header
+          className="philosophy-manifesto-heading"
+          initial={{
+            opacity: 0,
+            y: 24,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+        >
+          <div className="philosophy-manifesto-kicker">
+            <Sparkles size={14} />
+            The UGNOSIS Philosophy
+          </div>
 
-      <SectionHeading
-        eyebrow="The UGNOSIS Philosophy"
-        title="Understanding comes before technology."
-        description="UGNOSIS believes the best technology begins with understanding people, institutions and the decisions they make every day."
-        align="center"
-      />
+          <h2>
+            Understanding comes
+            before technology.
+          </h2>
 
-      <div className="philosophy-content">
+          <p>
+            UGNOSIS exists to build technology that begins
+            with people, learns from institutions and helps
+            organisations make sense of the world around them.
+          </p>
+        </motion.header>
 
-        <p>
-          Before software...
-        </p>
+        <div className="philosophy-manifesto-statement">
+          <motion.div
+            className="philosophy-statement-number"
+            initial={{
+              opacity: 0,
+              x: -20,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.4,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            01
+          </motion.div>
 
-        <p>
-          Before artificial intelligence...
-        </p>
+          <motion.div
+            className="philosophy-statement-copy"
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
+            transition={{
+              duration: 0.7,
+            }}
+          >
+            <span>
+              Our belief
+            </span>
 
-        <p>
-          Before automation...
-        </p>
+            <blockquote>
+              We are not building software for schools.
+              We are building understanding for institutions.
+            </blockquote>
 
-        <p>
-          There must first be understanding.
-        </p>
+            <p>
+              Software can record what happened. Intelligence
+              should help people understand why it happened,
+              what it means and what should receive attention
+              next.
+            </p>
+          </motion.div>
+        </div>
 
-        <p className="philosophy-highlight">
-          Every student.
-          Every teacher.
-          Every classroom.
-          Every assessment.
-          Every conversation.
-          Every decision.
-        </p>
+        <div className="philosophy-principles">
+          {principles.map((principle, index) => {
+            const Icon = principle.icon;
 
-        <p>
-          Together they reveal the living story of an institution.
-        </p>
+            return (
+              <motion.article
+                className="philosophy-principle"
+                key={principle.title}
+                initial={{
+                  opacity: 0,
+                  y: 22,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.2,
+                }}
+                transition={{
+                  duration: 0.55,
+                  delay: index * 0.07,
+                }}
+              >
+                <div className="philosophy-principle-top">
+                  <span>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
 
-        <p>
-          SCHUGNOSIS exists to help schools understand that story,
-          organize it and use it to make better decisions every day.
-        </p>
+                  <Icon size={20} />
+                </div>
 
-        <p>
-          UGNOSIS exists because we believe understanding is the
-          foundation upon which meaningful technology is built.
-        </p>
+                <h3>
+                  {principle.title}
+                </h3>
 
+                <p>
+                  {principle.text}
+                </p>
+              </motion.article>
+            );
+          })}
+        </div>
+
+        <motion.div
+          className="philosophy-human-layer"
+          initial={{
+            opacity: 0,
+            y: 22,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+        >
+          <div className="philosophy-human-line">
+            <span />
+            <strong>
+              People
+            </strong>
+            <span />
+          </div>
+
+          <div className="philosophy-human-copy">
+            <span>
+              What remains constant
+            </span>
+
+            <h3>
+              Better technology should make the institution
+              feel more human, not less.
+            </h3>
+
+            <p>
+              The teacher still teaches. The parent still
+              cares. The administrator still leads. The
+              student still learns. SCHUGNOSIS exists to give
+              each of them better tools, stronger context and
+              more room to focus on what matters.
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="philosophy-closing"
+          initial={{
+            opacity: 0,
+            y: 18,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.4,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+        >
+          <div>
+            <span>
+              UGNOSIS
+            </span>
+
+            <p>
+              Understand people deeply.
+              Create meaningful technologies.
+            </p>
+          </div>
+
+          <a href="#ecosystem">
+            Explore the ecosystem
+            <ArrowRight size={16} />
+          </a>
+        </motion.div>
       </div>
-
     </section>
   );
 }

@@ -1,0 +1,726 @@
+/* =========================================================
+   SCHUGNOSIS JOURNEY
+   Institutional Intelligence Timeline
+   ========================================================= */
+
+.journey-timeline-section {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+
+  padding:
+    128px 0 112px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 18%,
+      rgba(67, 120, 214, 0.08),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 88% 78%,
+      rgba(121, 91, 188, 0.05),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #fbfcff 0%,
+      #f6f8fc 52%,
+      #fbfcff 100%
+    );
+}
+
+.journey-timeline-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -2;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(53, 86, 138, 0.08) 1px,
+      transparent 1.2px
+    );
+
+  background-size:
+    31px 31px;
+
+  opacity: 0.28;
+
+  mask-image:
+    linear-gradient(
+      180deg,
+      transparent,
+      black 18%,
+      black 82%,
+      transparent
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      180deg,
+      transparent,
+      black 18%,
+      black 82%,
+      transparent
+    );
+}
+
+.journey-timeline-shell {
+  width:
+    min(1180px, calc(100% - 40px));
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.journey-timeline-heading {
+  max-width: 830px;
+
+  margin-bottom: 82px;
+}
+
+.journey-timeline-kicker {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 20px;
+
+  color: #356dcb;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.19em;
+
+  text-transform: uppercase;
+}
+
+.journey-timeline-heading h2 {
+  margin: 0;
+
+  color: #0c2349;
+
+  font-family:
+    var(--heading);
+
+  font-size:
+    clamp(43px, 5.4vw, 72px);
+
+  font-weight: 700;
+
+  line-height: 1.07;
+
+  letter-spacing: 0.005em;
+
+  text-wrap: balance;
+}
+
+.journey-timeline-heading p {
+  max-width: 760px;
+
+  margin: 25px 0 0;
+
+  color: #64758e;
+
+  font-size: 16px;
+
+  line-height: 1.9;
+
+  text-wrap: pretty;
+}
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.journey-road {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.journey-road-line {
+  position: absolute;
+
+  top: 39px;
+  left: 8%;
+  right: 8%;
+
+  height: 1px;
+
+  z-index: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(64, 107, 176, 0.28) 10%,
+      rgba(64, 107, 176, 0.28) 90%,
+      transparent
+    );
+}
+
+.journey-road-line::before,
+.journey-road-line::after {
+  content: "";
+
+  position: absolute;
+
+  top: -2px;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #6290db;
+
+  box-shadow:
+    0 0 0 6px rgba(98, 144, 219, 0.07);
+}
+
+.journey-road-line::before {
+  left: 0;
+}
+
+.journey-road-line::after {
+  right: 0;
+}
+
+/* =========================================================
+   STAGE
+   ========================================================= */
+
+.journey-road-stage {
+  position: relative;
+
+  z-index: 2;
+}
+
+.journey-road-marker {
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 24px;
+}
+
+.journey-road-marker > span {
+  color: #93a2b8;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.17em;
+}
+
+.journey-road-marker-core {
+  width: 54px;
+  height: 54px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid rgba(53, 109, 203, 0.14);
+
+  border-radius: 17px;
+
+  color: #3973cf;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  box-shadow:
+    0 13px 34px rgba(34, 67, 117, 0.08);
+}
+
+.journey-road-copy {
+  min-height: 315px;
+
+  padding: 25px;
+
+  border:
+    1px solid rgba(37, 74, 132, 0.085);
+
+  border-radius: 23px;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 16px 42px rgba(28, 56, 98, 0.05);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.journey-road-stage:hover .journey-road-copy {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(53, 109, 203, 0.16);
+
+  background:
+    rgba(255, 255, 255, 0.97);
+
+  box-shadow:
+    0 22px 54px rgba(28, 56, 98, 0.085);
+}
+
+.journey-road-phase {
+  display: block;
+
+  margin-bottom: 34px;
+
+  color: #356dcb;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.19em;
+
+  text-transform: uppercase;
+}
+
+.journey-road-copy h3 {
+  margin: 0;
+
+  color: #172f59;
+
+  font-family:
+    var(--heading);
+
+  font-size:
+    clamp(19px, 1.8vw, 25px);
+
+  font-weight: 700;
+
+  line-height: 1.32;
+}
+
+.journey-road-copy p {
+  margin: 15px 0 0;
+
+  color: #687991;
+
+  font-size: 12px;
+
+  line-height: 1.78;
+}
+
+/* =========================================================
+   ARRIVAL
+   Quiet ending to the journey
+   ========================================================= */
+
+.journey-arrival {
+  position: relative;
+
+  max-width: 880px;
+
+  margin:
+    76px auto 0;
+
+  padding:
+    0 24px;
+
+  text-align: center;
+}
+
+.journey-arrival-route {
+  position: relative;
+
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+}
+
+.journey-arrival-line {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 50%;
+
+  height: 1px;
+
+  transform:
+    translateY(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(70, 114, 182, 0.18) 15%,
+      rgba(70, 114, 182, 0.32) 50%,
+      rgba(70, 114, 182, 0.18) 85%,
+      transparent
+    );
+}
+
+.journey-arrival-point {
+  position: relative;
+
+  z-index: 2;
+
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid rgba(53, 109, 203, 0.14);
+
+  border-radius: 50%;
+
+  color: #356dcb;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 30px rgba(38, 77, 137, 0.08),
+    0 0 0 8px rgba(53, 109, 203, 0.025);
+}
+
+.journey-arrival-content {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  padding:
+    12px 0 0;
+}
+
+.journey-arrival-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #527fc7;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+}
+
+.journey-arrival-content h3 {
+  margin: 0;
+
+  color: #142d55;
+
+  font-family:
+    var(--heading);
+
+  font-size:
+    clamp(26px, 3vw, 40px);
+
+  font-weight: 700;
+
+  line-height: 1.26;
+
+  text-wrap: balance;
+}
+
+.journey-arrival-content p {
+  max-width: 660px;
+
+  margin:
+    14px auto 0;
+
+  color: #6b7b92;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  text-wrap: pretty;
+}
+
+.journey-arrival-content > a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 20px;
+
+  color: #315f9f;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.journey-arrival-content > a:hover {
+  gap: 11px;
+
+  color: #174f9c;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 960px) {
+  .journey-road {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap:
+      32px 18px;
+  }
+
+  .journey-road-line {
+    display: none;
+  }
+
+  .journey-road-copy {
+    min-height: 260px;
+  }
+
+  .journey-arrival {
+    margin-top: 64px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .journey-timeline-section {
+    padding:
+      82px 0 70px;
+  }
+
+  .journey-timeline-shell {
+    width:
+      calc(100% - 28px);
+  }
+
+  .journey-timeline-heading {
+    margin-bottom: 52px;
+  }
+
+  .journey-timeline-kicker {
+    margin-bottom: 15px;
+
+    font-size: 8px;
+  }
+
+  .journey-timeline-heading h2 {
+    font-size:
+      clamp(32px, 10vw, 46px);
+
+    line-height: 1.1;
+  }
+
+  .journey-timeline-heading p {
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+  .journey-road {
+    display: block;
+
+    position: relative;
+  }
+
+  .journey-road::before {
+    content: "";
+
+    position: absolute;
+
+    top: 29px;
+    bottom: 35px;
+    left: 26px;
+
+    width: 1px;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(72, 117, 189, 0.26),
+        rgba(72, 117, 189, 0.12)
+      );
+  }
+
+  .journey-road-stage {
+    display: grid;
+
+    grid-template-columns:
+      54px minmax(0, 1fr);
+
+    gap: 13px;
+
+    margin-bottom: 16px;
+  }
+
+  .journey-road-stage:last-child {
+    margin-bottom: 0;
+  }
+
+  .journey-road-marker {
+    position: relative;
+
+    min-height: 0;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    gap: 6px;
+
+    margin: 0;
+  }
+
+  .journey-road-marker > span {
+    order: 2;
+
+    font-size: 7px;
+  }
+
+  .journey-road-marker-core {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+  }
+
+  .journey-road-copy {
+    min-height: 0;
+
+    padding: 21px;
+
+    border-radius: 20px;
+  }
+
+  .journey-road-phase {
+    margin-bottom: 24px;
+
+    font-size: 7px;
+  }
+
+  .journey-road-copy h3 {
+    font-size: 19px;
+  }
+
+  .journey-road-copy p {
+    margin-top: 12px;
+
+    font-size: 11px;
+
+    line-height: 1.72;
+  }
+
+  .journey-arrival {
+    margin-top: 54px;
+
+    padding:
+      0 8px;
+  }
+
+  .journey-arrival-route {
+    height: 42px;
+
+    margin-bottom: 12px;
+  }
+
+  .journey-arrival-point {
+    width: 40px;
+    height: 40px;
+  }
+
+  .journey-arrival-content h3 {
+    font-size:
+      clamp(25px, 8vw, 34px);
+  }
+
+  .journey-arrival-content p {
+    margin-top: 12px;
+
+    font-size: 12px;
+
+    line-height: 1.72;
+  }
+
+  .journey-arrival-content > a {
+    margin-top: 18px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .journey-timeline-shell {
+    width:
+      calc(100% - 20px);
+  }
+
+  .journey-road-stage {
+    grid-template-columns:
+      48px minmax(0, 1fr);
+
+    gap: 10px;
+  }
+
+  .journey-road::before {
+    left: 23px;
+  }
+
+  .journey-road-marker-core {
+    width: 42px;
+    height: 42px;
+  }
+
+  .journey-road-copy {
+    padding: 18px;
+  }
+
+  .journey-arrival {
+    padding: 0;
+  }
+}
